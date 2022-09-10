@@ -198,6 +198,7 @@ const skills = {
         "⚡ Worked towards development of other orthogonal techniques to detect malware.",
         "⚡ Developed image based and audio based techniques to detect malware.",
         "⚡ Developed a tool called MalSee that does image based analysis for malware classification.",
+        "⚡ Checkout MalSee at https://malsee.mayachitra.com/",
       ],
       softwareSkills: [
         {
