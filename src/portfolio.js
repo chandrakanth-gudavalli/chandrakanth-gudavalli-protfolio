@@ -13,7 +13,7 @@ const seo = {
   og: {
     title: "Chandrakanth Gudavalli",
     type: "website",
-    url: "http://chandrakanthgudavalli.com/",
+    url: "https://chandrakanth-gudavalli.github.io/",
   },
 };
 
@@ -492,7 +492,7 @@ const experience = {
 const projectsHeader = {
   title: "Publications",
   description:
-    "My projects makes use of vast variety of latest technology tools. My best experience is to create Data Science projects and deploy them to web applications using cloud infrastructure.",
+    "I love to write papers, whenever I am part of creating something novel. I have worked on and published a few research papers.",
   avatar_image_path: "projects_image.svg",
 };
 

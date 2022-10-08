@@ -29,3 +29,4 @@ src/assests/images/faces.gif
 .prettierrc.json
 .prettierignore
 .all-contributorsrc
+git_data_fetcher.mjs

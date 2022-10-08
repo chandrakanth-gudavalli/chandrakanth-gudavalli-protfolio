@@ -50,13 +50,13 @@ class Projects extends Component {
             return <GithubRepoCard repo={repo} theme={theme} />;
           })}
         </div>
-        <Button
+        {/* <Button
           text={"More Projects"}
           className="project-button"
           href={greeting.githubProfile}
           newTab={true}
           theme={theme}
-        />
+        /> */}
 
         {/* Publications  */}
 
@@ -64,17 +64,17 @@ class Projects extends Component {
           <Fade bottom duration={2000} distance="40px">
             <div className="publications-heading-div">
               <div className="publications-heading-text-div">
-                <h1
+                {/* <h1
                   className="publications-heading-text"
                   style={{ color: theme.text }}
                 >
                   {publicationsHeader.title}
-                </h1>
+                </h1> */}
                 <p
                   className="projects-header-detail-text subTitle"
                   style={{ color: theme.secondaryText }}
                 >
-                  {publicationsHeader["description"]}
+                  {/* {publicationsHeader["description"]} */}
                 </p>
               </div>
             </div>
