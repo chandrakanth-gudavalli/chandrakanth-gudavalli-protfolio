@@ -25,9 +25,9 @@ const greeting = {
   subTitle:
     "Computer Vision Researcher trying to make my GPUs imagine/grasp things better than me (WIP).",
   resumeLink:
-    "https://drive.google.com/file/d/13R7CXPPcSBFwaRttx3dG7rRREBpiDNdQ/view?usp=sharing",
+    "https://drive.google.com/file/d/1MGBh7kq9zqKuhubHyr1p0_CI-DueCCdB/view?usp=share_link",
   portfolio_repository:
-    "https://drive.google.com/file/d/13R7CXPPcSBFwaRttx3dG7rRREBpiDNdQ/view?usp=sharing",
+    "https://drive.google.com/file/d/1MGBh7kq9zqKuhubHyr1p0_CI-DueCCdB/view?usp=share_link",
   githubProfile: "https://github.com/chandrakanth-gudavalli",
 };
 
