@@ -9,7 +9,7 @@ const settings = {
 const seo = {
   title: "Chandrakanth Gudavalli",
   description:
-    "Computer Vision Researcher trying to make my GPUs imagine/grasp things better than me (WIP).",
+    "Computer Vision Researcher trying to make my A100s imagine/grasp things better than me (WIP).",
   og: {
     title: "Chandrakanth Gudavalli",
     type: "website",
@@ -23,7 +23,7 @@ const greeting = {
   logo_name: "Gudavalli",
   nickname: "chandu",
   subTitle:
-    "Computer Vision Researcher trying to make my GPUs imagine/grasp things better than me (WIP).",
+    "Computer Vision Researcher trying to make my A100s imagine/grasp things better than me (WIP).",
   resumeLink:
     "https://drive.google.com/file/d/1MGBh7kq9zqKuhubHyr1p0_CI-DueCCdB/view?usp=share_link",
   portfolio_repository:
@@ -61,6 +61,10 @@ const socialMediaLinks = [
   },
 ];
 
+
+let text = "Free Web Building Tutorials111!";
+let result = text.link("https://www.w3schools.com");
+
 const skills = {
   data: [
     {
@@ -75,6 +79,13 @@ const skills = {
         // "⚡ Complex quantitative modelling for dynamic forecasting and time series analysis",
       ],
       softwareSkills: [
+        {
+          skillName: "PyTorch",
+          fontAwesomeClassname: "logos-pytorch",
+          style: {
+            backgroundColor: "transparent",
+          },
+        },
         {
           skillName: "Tensorflow",
           fontAwesomeClassname: "logos-tensorflow",
@@ -91,10 +102,50 @@ const skills = {
           },
         },
         {
-          skillName: "PyTorch",
-          fontAwesomeClassname: "logos-pytorch",
+          skillName: "Python",
+          fontAwesomeClassname: "ion-logo-python",
           style: {
             backgroundColor: "transparent",
+            color: "#3776AB",
+          },
+        },
+      ],
+    },
+    {
+      title: "MLOps with BisQue",
+      fileName: "BisQueWorkflowImage",
+      skills: [
+        "⚡ BisQue is an open-source web-based platform that supports data storage for petabytes, ML based data analysis and reproducible workflows, and visualization.",
+        "⚡ Follow our handy guides to get started on the basics as quickly as possible: https://bisque.gitbook.io/docs/",
+        "⚡ Check out a version of BisQue hosted at UCSB: https://bisque2.ece.ucsb.edu/",
+      ],
+      softwareSkills: [
+        {
+          skillName: "PostgreSQL",
+          fontAwesomeClassname: "simple-icons:postgresql",
+          style: {
+            color: "#336791",
+          },
+        },
+        {
+          skillName: "MongoDB",
+          fontAwesomeClassname: "simple-icons:mongodb",
+          style: {
+            color: "#47A248",
+          },
+        },
+        {
+          skillName: "Docker",
+          fontAwesomeClassname: "simple-icons:docker",
+          style: {
+            color: "#1488C6",
+          },
+        },
+        {
+          skillName: "Kubernetes",
+          fontAwesomeClassname: "simple-icons:kubernetes",
+          style: {
+            color: "#326CE5",
           },
         },
         {
