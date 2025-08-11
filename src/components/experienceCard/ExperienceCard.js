@@ -3,7 +3,16 @@ import "./ExperienceCard.css";
 
 class ExperienceCard extends Component {
   render() {
-    const experience = this.props.experience;
+    debugger;
+    const experience= (this.props.experience)
+    const experiences= (this.props.experience.description)
+    const links =  /https?:\/\/[^\s]+/g;
+    const textWihAnchors=experiences.toString().replace(links,(url) => {
+      return <a href={url} target="_blank" key={url}>{url} </a>
+    })
+    console.log("The anchors are",textWihAnchors)
+
+    
     const theme = this.props.theme;
     return (
       <div
@@ -37,6 +46,11 @@ class ExperienceCard extends Component {
                 >
                   {experience["company"]}
                 </a>
+
+
+
+
+
               </p>
             </div>
             <div className="experience-card-heading-right">
@@ -58,7 +72,10 @@ class ExperienceCard extends Component {
             className="experience-card-description"
             style={{ color: theme.text }}
           >
-            {experience["description"]}
+            {/* {experience["description"]} */}
+            {textWihAnchors}
+            {/* <a href={experience["Project_1"]}> https://google.com</a> */}
+            {/* <a href={experience["description"]}> Click me</a> */}
           </p>
         </div>
       </div>

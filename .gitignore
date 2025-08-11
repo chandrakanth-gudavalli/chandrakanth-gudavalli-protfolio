@@ -30,3 +30,4 @@ src/assests/images/faces.gif
 .prettierignore
 .all-contributorsrc
 git_data_fetcher.mjs
+build_old/*
