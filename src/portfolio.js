@@ -23,7 +23,7 @@ const greeting = {
   logo_name: "Gudavalli",
   nickname: "chandu",
   subTitle:
-    "Computer Vision Researcher trying to make my A100s imagine/grasp things better than me (WIP).",
+    "Computer Vision Researcher trying to make my GPUs imagine/grasp things better than me (WIP).",
   resumeLink:
     "https://drive.google.com/file/d/1MGBh7kq9zqKuhubHyr1p0_CI-DueCCdB/view?usp=share_link",
   portfolio_repository:
