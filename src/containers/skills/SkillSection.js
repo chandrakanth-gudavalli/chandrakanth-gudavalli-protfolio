@@ -8,6 +8,7 @@ import FullStackImg from "./FullStackImg";
 import CloudInfraImg from "./CloudInfraImg";
 import DesignImg from "./DesignImg";
 import BisQueWorkflowImage from "./BisQueWorkflowImage";
+import SfmImage from "./SfmImage";
 
 function GetSkillSvg(props) {
   if (props.fileName === "DataScienceImg")
@@ -18,6 +19,8 @@ function GetSkillSvg(props) {
     return <CloudInfraImg theme={props.theme} />;
   else if (props.fileName === "BisQueWorkflowImage")
     return <BisQueWorkflowImage theme={props.theme} />; 
+  else if (props.fileName === "sfm_image")
+    return <SfmImage theme={props.theme} />; 
   return <DesignImg theme={props.theme} />;
 }
 

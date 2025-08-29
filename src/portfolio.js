@@ -14,6 +14,7 @@ const seo = {
     title: "Chandrakanth Gudavalli",
     type: "website",
     url: "https://chandrakanth-gudavalli.github.io/",
+    image: "https://scholar.googleusercontent.com/citations?view_op=view_photo&user=TyzK9okAAAAJ&citpid=2"
   },
 };
 
@@ -68,6 +69,50 @@ let result = text.link("https://www.w3schools.com");
 const skills = {
   data: [
     {
+      title: "3D Reconstruction and SfM",
+      fileName: "sfm_image",
+      skills: [
+        "⚡ Developed end-to-end SfM pipelines for 3D reconstruction, including feature extraction, camera pose estimation, and dense point cloud generation.",
+        "⚡ Integrated GPS, IMU, and RPC metadata to improve geo-referencing accuracy in large-scale reconstructions.",
+        "⚡ Applied SfM to diverse domains such as satellite/drone imagery registration, urban mapping, and underwater 3D modeling.",
+        "⚡ Optimized SfM workflows for multi-GPU execution, enabling scalable " +
+        " processing of high-resolution, multi-view datasets.",
+        // "⚡ Complex quantitative modelling for dynamic forecasting and time series analysis",
+      ],
+      softwareSkills: [
+        {
+          skillName: "PyTorch",
+          fontAwesomeClassname: "logos-pytorch",
+          style: {
+            backgroundColor: "transparent",
+          },
+        },
+        // {
+        //   skillName: "Tensorflow",
+        //   fontAwesomeClassname: "logos-tensorflow",
+        //   style: {
+        //     backgroundColor: "transparent",
+        //   },
+        // },
+        // {
+        //   skillName: "Keras",
+        //   fontAwesomeClassname: "simple-icons:keras",
+        //   style: {
+        //     backgroundColor: "white",
+        //     color: "#D00000",
+        //   },
+        // },
+        {
+          skillName: "Python",
+          fontAwesomeClassname: "ion-logo-python",
+          style: {
+            backgroundColor: "transparent",
+            color: "#3776AB",
+          },
+        },
+      ],
+    },
+    {
       title: "Media Forensics",
       fileName: "DataScienceImg",
       skills: [
@@ -75,7 +120,7 @@ const skills = {
         "⚡ Images can be manipulated using several foregery techniques like splicing, seam carving, inpainting, GANs, and so on.",
         "⚡ I have expertise in developing forensic tools that can verify the authenticity of given image database.",
         "⚡ I was part of 4 year MediFor project (MEdia FORensics) funded by the US federal agencies." +
-          " Worked towards the development of both hollistic forensic tools and forgery specific forensic tools.",
+        " Worked towards the development of both hollistic forensic tools and forgery specific forensic tools.",
         // "⚡ Complex quantitative modelling for dynamic forecasting and time series analysis",
       ],
       softwareSkills: [
@@ -245,7 +290,7 @@ const skills = {
       fileName: "CloudInfraImg",
       skills: [
         "⚡ Cyber attacks and new malware count is increasing day by day. Many existing malware detection solutions" +
-          " are not found to be succesful in many scenarios.",
+        " are not found to be succesful in many scenarios.",
         "⚡ Worked towards development of other orthogonal techniques to detect malware.",
         "⚡ Developed image based and audio based techniques to detect malware.",
         "⚡ Developed a tool called MalSee that does image based analysis for malware classification.",
@@ -480,11 +525,11 @@ const experience = {
           location: "Santa Barbara, California",
           Project_1: "https://www.google.com/",
           description: [
-            "⚡ Project 1 – Signal Processing based Malware Detection: Every malware or benign file is set of bytes, which can be translated into images and audio files. Performed computer-vision based analysis on malware images to detect if a given binary is malware or not. Developed fast, lightweight, and 95% accurate framework for malware classification. Demo version is hosted as a webapp at https://malsee.mayachitra.com/."+"\n" ,
-            "⚡ Project 2 – Seam-carving based image manipulation detection: Worked on a research project to detect seam carving based manipulations in aerial imagery. Developed deep learning models that are 99.2% accurate at detecting seam carved images. Enhanced forensic models to come up with a localized segmentation masks to predict the regions of the image that are manipulated besides image level binary prediction (Preliminary results are published to MDCWC Conference)."+"\n",
-            "⚡ Project 3 – GAN based Object Removal and Insertion: Developed a novel GAN based image manipulation framework that uses few shot learning techniques to insert / remove objects in aerial or consumer imagery by using the semantic information of the objects present in the image."+"\n",
-            "⚡ Project 4 – Date Metadata Tampering on Satellite Imagery: Worked towards the development of computer vision models to predict sun angle by utilizing satellite image pixel information and its lat long information. Image capture date is calculated using azimuth and elevation angles of sun that are predicted with 5.1 degrees of variance."+"\n",
-            "⚡ Project 5 – RPC Metadata Authenticator: Developed physics-based models that are 99.98% accurate at authenticating the RPC metadata that was claimed to be used for orthorectifying a satellite image. Authentication has been carried out by matching the DFT patterns of pixel displacements (Writing paper to IEEE Journal – Transactions on Information Forensics and Security– Work in progress). "+"\n",
+            "⚡ Project 1 – Signal Processing based Malware Detection: Every malware or benign file is set of bytes, which can be translated into images and audio files. Performed computer-vision based analysis on malware images to detect if a given binary is malware or not. Developed fast, lightweight, and 95% accurate framework for malware classification. Demo version is hosted as a webapp at https://malsee.mayachitra.com/." + "\n",
+            "⚡ Project 2 – Seam-carving based image manipulation detection: Worked on a research project to detect seam carving based manipulations in aerial imagery. Developed deep learning models that are 99.2% accurate at detecting seam carved images. Enhanced forensic models to come up with a localized segmentation masks to predict the regions of the image that are manipulated besides image level binary prediction (Preliminary results are published to MDCWC Conference)." + "\n",
+            "⚡ Project 3 – GAN based Object Removal and Insertion: Developed a novel GAN based image manipulation framework that uses few shot learning techniques to insert / remove objects in aerial or consumer imagery by using the semantic information of the objects present in the image." + "\n",
+            "⚡ Project 4 – Date Metadata Tampering on Satellite Imagery: Worked towards the development of computer vision models to predict sun angle by utilizing satellite image pixel information and its lat long information. Image capture date is calculated using azimuth and elevation angles of sun that are predicted with 5.1 degrees of variance." + "\n",
+            "⚡ Project 5 – RPC Metadata Authenticator: Developed physics-based models that are 99.98% accurate at authenticating the RPC metadata that was claimed to be used for orthorectifying a satellite image. Authentication has been carried out by matching the DFT patterns of pixel displacements (Writing paper to IEEE Journal – Transactions on Information Forensics and Security– Work in progress). " + "\n",
             "⚡ Project 6 – Deepfake Detection: Worked towards the development of co-occurrence matrix-based image manipulation detectors that are 98.4% accurate in detecting if the image is generated by GAN. Demo version is hosted as a webapp at https://medifor-webapp-mayachitra.azurewebsites.net/.",
           ],
           color: "#0879bf",
@@ -497,8 +542,8 @@ const experience = {
           duration: "March 2019 - December 2019",
           location: "Denver, Colorado",
           description: [
-            "⚡ Project 1 – Image segmentation model for receiver edge detection: Developed a semantic segmentation model with a modified SegNet architecture to detect the reflection of the solar tower on heliostats. Shape of the receiver’s reflection on the heliostat is used for picking defective facets. SegNet Accuracy: 92.14%"+"\n",
-            "⚡ Project 2 – Anomaly Detection in Feedstock stream: Developed a GRU network based time series classification model to detect if the input feedstock stream can overload the reactor and lead to unnecessary shutdown. Publication Link: https://rdcu.be/caZd9"+"\n",
+            "⚡ Project 1 – Image segmentation model for receiver edge detection: Developed a semantic segmentation model with a modified SegNet architecture to detect the reflection of the solar tower on heliostats. Shape of the receiver’s reflection on the heliostat is used for picking defective facets. SegNet Accuracy: 92.14%" + "\n",
+            "⚡ Project 2 – Anomaly Detection in Feedstock stream: Developed a GRU network based time series classification model to detect if the input feedstock stream can overload the reactor and lead to unnecessary shutdown. Publication Link: https://rdcu.be/caZd9" + "\n",
           ],
           color: "#9b1578",
         },
@@ -510,8 +555,8 @@ const experience = {
           duration: "March 2019 - December 2019",
           location: "Denver, Colorado",
           description: [
-            "⚡ Project 1 - Handgun Detection: Worked with Prof. Dan Connors to implement a handgun detection model using YOLO neural network and R-CNN. Obtained Model mAp: 81.2."+"\n",
-            "⚡ Project 2 - Car Logo Detector: Developed 92% accurate car logo detector that can analyze the video stream from street cameras and generate a daily statistical report on customer usage of each car brand."+"\n",
+            "⚡ Project 1 - Handgun Detection: Worked with Prof. Dan Connors to implement a handgun detection model using YOLO neural network and R-CNN. Obtained Model mAp: 81.2." + "\n",
+            "⚡ Project 2 - Car Logo Detector: Developed 92% accurate car logo detector that can analyze the video stream from street cameras and generate a daily statistical report on customer usage of each car brand." + "\n",
           ],
           color: "#9b1578",
         },
@@ -528,10 +573,10 @@ const experience = {
           duration: "June 2015 - July 2017",
           location: "Hyderabad, India",
           description: [
-            "⚡ Worked for 2 years as C++ and Python developer of telecom billing applications (ICOMS, RB)."+"\n",
-            "⚡ Gained expertise in dealing with software development, interactive/batch debugging, and unit testing."+"\n",
-            "⚡ Worked in all phases of software development life cycle while working on enhancements of ICOMS."+"\n",
-            "⚡ Worked towards the development of REST APIs to streamline customer payments and adjustment that are compliant to PCI standards."+"\n",
+            "⚡ Worked for 2 years as C++ and Python developer of telecom billing applications (ICOMS, RB)." + "\n",
+            "⚡ Gained expertise in dealing with software development, interactive/batch debugging, and unit testing." + "\n",
+            "⚡ Worked in all phases of software development life cycle while working on enhancements of ICOMS." + "\n",
+            "⚡ Worked towards the development of REST APIs to streamline customer payments and adjustment that are compliant to PCI standards." + "\n",
           ],
           color: "#fc1f20",
         },
