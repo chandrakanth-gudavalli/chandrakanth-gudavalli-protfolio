@@ -247,3 +247,16 @@ If you can help us with these. Please don't hesitate to open an [pull request](h
 
 - Some Design and Implementation Ideas are taken from [Saad Pasta's Portfolio Project](https://github.com/saadpasta/developerFolio).
 - The Logo of MasterPortfolio is inspired from [prettier-logo](https://github.com/prettier/prettier-logo) for [prettier](https://github.com/prettier/prettier) designed by @ianstormtaylor.
+
+
+# Custom Instructions:
+
+## TODO for the Dev Team:
+* Make VS Code show up the agentic mode in the chat (with copilot) (use the team lead's github credentials)
+* Run the commands below
+```bash
+npm run start
+```
+
+## Changes to be made:
+* Add publications
