@@ -112,12 +112,12 @@ Order: Nav → Hero → Work → Experience → Publications → Education → C
 
 **Selected Work — "Reconstructions"** (2×2 grid, 1 column < 640 px). Each `WorkCard`: media (image, or muted looping video for MetaReg), title, one-line impact, link chips.
 
-1. **Cloud-native SfM for IARPA WRIVA** — "Wide-baseline, mixed-altitude imagery fused with GPS, OSM and satellite priors. #1 on the WRIVA leaderboard, ahead of MIT and Stanford teams." → demo (YouTube `2GJS7BRKg1s`).
-2. **Campus-scale reconstruction (UCSB × JHU)** — "Thousands of heterogeneous images reconstructed end-to-end; technical lead for a 14-member cross-institution team." → demo (YouTube `LbreY2Czc7E`), project page (cpeng93.github.io/JHU-in-3D).
+1. **Cloud-native SfM for IARPA WRIVA** — "Wide-baseline, mixed-altitude imagery fused with GPS, OSM and satellite priors. #1 on the WRIVA leaderboard, ahead of MIT and Stanford teams." → demo (cpeng93.github.io/JHU-in-3D — the JHU campus reconstruction used in the hero is WRIVA work).
+2. **Campus-scale reconstruction from drone footage (UCSB)** — "UCSB campus reconstructed end-to-end from thousands of heterogeneous drone images." → demo 1 (YouTube `2GJS7BRKg1s`), demo 2 (YouTube `LbreY2Czc7E`).
 3. **Ground → satellite geolocalization via 3DGS** — "Ground-image clusters rendered to a zenith view with Gaussian Splatting and Difix3D, registered to WorldView-3. Sub-10 m camera RMSE." → CVPR 2026 paper (arXiv 2602.14929).
-4. **MetaReg: fast incremental registration** — "Custom PnP using noisy GPS and spatial neighbors adds a camera to an existing model in < 1.34 s." → ICIP 2025 (link from Scholar if available).
+4. **MetaReg: fast incremental registration** — "Custom PnP using noisy GPS and spatial neighbors adds a camera to an existing model in < 1.34 s." → ICIP 2025 paper (Google Drive PDF from the resume).
 
-Mapping of YouTube IDs to WRIVA vs. campus is verified against the videos before implementation; links open in a new tab.
+Link mapping verified against the resume PDF annotations and YouTube titles (2026-10-09). Links open in a new tab.
 
 **Experience** — quiet list; each entry: `org — role` and dates on one line, location muted, 2–3 bullets (≤ ~20 words each) condensed from the resume.
 
