@@ -69,6 +69,7 @@ a:hover {
   height: 30px;
   cursor: pointer;
   font-size: 14px;
+  flex: none;
 }
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -110,6 +111,9 @@ a:hover {
   font-size: 13px;
   overflow-x: auto;
   white-space: nowrap;
+  min-width: 0;
+  flex: 1 1 auto;
+  justify-content: flex-end;
 }
 .nav-links a {
   color: var(--muted);
@@ -123,6 +127,18 @@ a:hover {
   .nav-links {
     gap: 12px;
     font-size: 12px;
+  }
+}
+@media (max-width: 420px) {
+  .nav-brand {
+    display: none;
+  }
+  .nav-inner {
+    padding: 10px 16px;
+    gap: 10px;
+  }
+  .nav-links {
+    gap: 10px;
   }
 }
 

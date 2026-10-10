@@ -7,7 +7,7 @@ export default function ThemeToggle({ theme, onToggle }) {
       onClick={onToggle}
       aria-label={`Switch to ${next} theme`}
     >
-      {theme === "dark" ? "☀" : "☾"}
+      {theme === "dark" ? "☀\uFE0E" : "☾\uFE0E"}
     </button>
   );
 }

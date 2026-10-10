@@ -19,8 +19,8 @@ export default function Nav({ sections, theme, onToggleTheme }) {
               {s.label}
             </a>
           ))}
-          <ThemeToggle theme={theme} onToggle={onToggleTheme} />
         </div>
+        <ThemeToggle theme={theme} onToggle={onToggleTheme} />
       </div>
     </nav>
   );

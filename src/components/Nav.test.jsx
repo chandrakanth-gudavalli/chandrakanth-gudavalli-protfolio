@@ -81,3 +81,12 @@ test("marks the last section current when scrolled to the page bottom", () => {
   define(window, "scrollY", 0);
   define(document.documentElement, "scrollHeight", 0);
 });
+
+test("theme toggle sits outside the scrollable link row", () => {
+  const { container } = render(
+    <Nav sections={sections} theme="dark" onToggleTheme={() => {}} />,
+  );
+  const toggle = screen.getByRole("button", { name: /switch to light theme/i });
+  expect(container.querySelector(".nav-links").contains(toggle)).toBe(false);
+  expect(toggle.parentElement).toHaveClass("nav-inner");
+});
