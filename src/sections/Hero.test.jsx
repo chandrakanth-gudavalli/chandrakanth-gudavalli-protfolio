@@ -39,10 +39,10 @@ test("renders name, tagline, bio and links", () => {
     "target",
   );
   expect(screen.getByText(profile.highlight.text)).toBeInTheDocument();
-  expect(screen.getByRole("link", { name: "certificate" })).toHaveAttribute(
-    "href",
-    profile.highlight.href,
-  );
+  const cert = screen.getByRole("link", { name: "certificate" });
+  expect(cert).toHaveAttribute("href", profile.highlight.href);
+  expect(cert).toHaveAttribute("target", "_blank");
+  expect(cert).toHaveAttribute("rel", "noopener noreferrer");
 });
 
 test("renders two muted, looping videos with posters and both sources", () => {
