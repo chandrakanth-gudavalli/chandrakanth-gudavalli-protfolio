@@ -1,4 +1,4 @@
-import { existsSync, readdirSync, statSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { join } from "node:path";
 import * as content from "./content";
 
@@ -29,4 +29,12 @@ test("each media file is at most 2.5 MB", () => {
 
 test("social preview image exists", () => {
   expect(existsSync(join(PUBLIC, "og-image.jpg"))).toBe(true);
+});
+
+test("site is configured for the www domain", () => {
+  const cname = readFileSync(join(PUBLIC, "CNAME"), "utf8").trim();
+  expect(cname).toBe("www.chandrakanthgudavalli.com");
+  const html = readFileSync(join(process.cwd(), "index.html"), "utf8");
+  expect(html).not.toMatch(/https:\/\/chandrakanthgudavalli\.com/);
+  expect(html).toContain('href="https://www.chandrakanthgudavalli.com/"');
 });

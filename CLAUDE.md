@@ -10,14 +10,14 @@ npm test           # Vitest, run once
 npm run build      # production build to dist/
 npm run preview    # serve dist/ locally
 npm run media      # re-encode public/media from raw videos in assets/ (needs ffmpeg)
-npm run deploy     # build + publish dist/ to the gh-pages branch (ask before running)
+npm run deploy     # build + publish dist/ to master of chandrakanth-gudavalli.github.io (the live site; ask before running)
 ```
 
 Prettier runs on staged files via a husky pre-commit hook.
 
 ## Architecture
 
-Single-page Vite + React 18 site served at chandrakanthgudavalli.com (GitHub Pages, `public/CNAME`).
+Single-page Vite + React 18 site served at https://www.chandrakanthgudavalli.com — GitHub Pages from the master branch of chandrakanth-gudavalli/chandrakanth-gudavalli.github.io (built files only; this repo holds the source). `public/CNAME` must stay `www.chandrakanthgudavalli.com`.
 
 - `src/content.js` — ALL site copy, links and media paths. Edit this to update the site.
 - `src/App.jsx` — composes Nav + sections in order.
