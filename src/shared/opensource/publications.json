@@ -1,31 +1,123 @@
 {
   "data": [
     {
-      "id": "MDEwOlJlcG9zaXRvcnkyNDU0NjcyNzQ=",
-      "name": "SeeTheSeams: Seam Carving Detection",
-      "createdAt": "2022-06-23T16:26:54Z",
-      "description": "CVPR-22 (Workshop on Media Forensics) ",
-      "url": "https://openaccess.thecvf.com/content/CVPR2022W/WMF/html/Gudavalli_SeeTheSeams_Localized_Detection_of_Seam_Carving_Based_Image_Forgery_in_CVPRW_2022_paper.html"
+      "id": "paper-wrivinder-cvpr-2026",
+      "name": "Wrivinder: Towards Spatial Intelligence for Geo-locating Ground Images onto Satellite Imagery",
+      "createdAt": "2025-03-01T00:00:00Z",
+      "description": "CVPR 2026",
+      "url": "https://arxiv.org/abs/2602.14929"
     },
     {
-      "id": "MDEwOlJlcG9zaXRvcnkyNDU0NjcyNzi=",
-      "name": "Image Ressampling Estimation",
-      "createdAt": "2020-03-06T16:26:54Z",
-      "description": "IEEE-TIFS",
+      "id": "paper-metareg-icip-2025",
+      "name": "METAREG: Robust Camera Parameter Estimation by Leveraging Noisy Camera Extrinsics",
+      "createdAt": "2025-01-01T00:00:00Z",
+      "description": "IEEE ICIP 2025",
+      "url": "https://ieeexplore.ieee.org/abstract/document/11084709"
+    },
+    {
+      "id": "paper-wildlifemapper-cvpr-2024",
+      "name": "Wildlifemapper: Aerial image analysis for multi-species detection and identification",
+      "createdAt": "2024-01-01T00:00:00Z",
+      "description": "CVPR 2024",
+      "url": "https://openaccess.thecvf.com/content/CVPR2024/html/Kumar_WildlifeMapper_Aerial_Image_Analysis_for_Multi-Species_Detection_and_Identification_CVPR_2024_paper.html"
+    },
+    {
+      "id": "paper-cimgen-icpr-2024",
+      "name": "CIMGEN: Controlled Satellite Image Manipulation by Finetuning Pretrained Generative Models on Limited Data",
+      "createdAt": "2024-01-01T00:00:00Z",
+      "description": "ICPR 2024",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-031-78305-0_7"
+    },
+    {
+      "id": "paper-reemark-arxiv-2510-03152-2025",
+      "name": "ReeMark: Reeb Graphs for Simulating Patterns of Life in Spatiotemporal Trajectories",
+      "createdAt": "2025-01-01T00:00:00Z",
+      "description": "arXiv preprint — arXiv:2510.03152",
+      "url": "https://arxiv.org/abs/2510.03152"
+    },
+    {
+      "id": "paper-gps-mtm-arxiv-2509-24031-2025",
+      "name": "GPS-MTM: Capturing Pattern of Normalcy in GPS-Trajectories with self-supervised learning",
+      "createdAt": "2025-01-01T00:00:00Z",
+      "description": "arXiv preprint — arXiv:2509.24031",
+      "url": "https://arxiv.org/abs/2509.24031"
+    },
+    {
+      "id": "paper-ai-shunt-treatment-neurosurgery-2024",
+      "name": "Artificial Intelligence for Automatic Analysis of Shunt Treatment in Presurgery and Postsurgery Computed Tomography Brain Scans of Patients With Idiopathic Normal Pressure Hydrocephalus",
+      "createdAt": "2024-01-01T00:00:00Z",
+      "description": "Neurosurgery (LWW)",
+      "url": "https://journals.lww.com/neurosurgery/abstract/2024/12000/artificial_intelligence_for_automatic_analysis_of.12.aspx?context=featuredarticles&collectionid=69"
+    },
+    
+        {
+      "id": "paper-reespot-icpr-2024",
+      "name": "ReeSPOT: Reeb Graph Models Semantic Patterns of Normalcy in Human Trajectories",
+      "createdAt": "2024-01-01T00:00:00Z",
+      "description": "ICPR 2024",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-031-78183-4_16"
+    },
+    {
+      "id": "paper-reeframe-acm-sigspatial-workshop-2024",
+      "name": "Reeframe: Reeb graph based trajectory analysis framework to capture top-down and bottom-up patterns of life",
+      "createdAt": "2024-01-01T00:00:00Z",
+      "description": "ACM SIGSPATIAL Workshop on Geospatial Anomaly Detection (GeoAnomDet)",
+      "url": "https://dl.acm.org/doi/abs/10.1145/3681765.3698452"
+    },
+    {
+      "id": "patent-rpc-metadata-verification-2024-18385699",
+      "name": "Rational polynomial coefficient based metadata verification",
+      "createdAt": "2024-10-24T00:00:00Z",
+      "description": "US Patent App. 18/385,699",
+      "url": "https://patents.google.com/patent/US20240354919A1/en"
+    },
+        {
+      "id": "paper-q-rbsa-npj-comp-mater-2024",
+      "name": "Q-RBSA: high-resolution 3D EBSD map generation using an efficient quaternion transformer network",
+      "createdAt": "2024-01-01T00:00:00Z",
+      "description": "npj Computational Materials (Nature)",
+      "url": "https://www.nature.com/articles/s41524-024-01209-6"
+    },
+    {
+      "id": "patent-controlled-image-manipulations-2023-18137268",
+      "name": "Controlled image manipulations using semantic labels",
+      "createdAt": "2023-12-28T00:00:00Z",
+      "description": "US Patent App. 18/137,268",
+      "url": "https://patents.google.com/patent/US12541968B2/en"
+    },
+    {
+      "id": "paper-resampling-estimation-tifs-2023",
+      "name": "Resampling estimation based RPC metadata verification in satellite imagery",
+      "createdAt": "2023-01-01T00:00:00Z",
+      "description": "IEEE Transactions on Information Forensics and Security (TIFS)",
       "url": "https://ieeexplore.ieee.org/abstract/document/10124789"
     },
     {
-      "id": "MDEwOlJlcG9zaXRvcnkyNDU0NjcyNze=",
-      "name": "Seam Carving Forensics",
-      "createdAt": "2021-05-29T16:26:54Z",
-      "description": "Springer-MDCWC",
+      "id": "patent-rpc-metadata-verification-2022-17342992",
+      "name": "Rational Polynomial Coefficient Based Metadata Verification",
+      "createdAt": "2022-12-15T00:00:00Z",
+      "description": "US Patent App. 17/342,992",
+      "url": "https://patents.google.com/patent/US11842471B2/en"
+    },
+    {
+      "id": "paper-seetheseams-2022",
+      "name": "SeeTheSeams: Localized detection of seam carving based image forgery in satellite imagery",
+      "createdAt": "2022-01-01T00:00:00Z",
+      "description": "CVPR 2022 (Workshop on Media Forensics)",
+      "url": "https://openaccess.thecvf.com/content/CVPR2022W/WMF/html/Gudavalli_SeeTheSeams_Localized_Detection_of_Seam_Carving_Based_Image_Forgery_in_CVPRW_2022_paper.html"
+    },
+    {
+      "id": "paper-seam-carving-mdcwc-2021",
+      "name": "Seam carving detection and localization using two-stage deep neural networks",
+      "createdAt": "2021-01-01T00:00:00Z",
+      "description": "Springer — MDCWC 2020 Proceedings",
       "url": "https://link.springer.com/chapter/10.1007/978-981-16-0289-4_29"
     },
     {
-      "id": "MDEwOlJlcG9zaXRvcnkyNDU0NjcyNzt=",
-      "name": "Biomass quality detection",
-      "createdAt": "2020-07-25T16:26:54Z",
-      "description": "Biomass Conversion and Biorefinery (2020) ",
+      "id": "paper-biomass-quality-2020",
+      "name": "Real-time biomass feedstock particle quality detection using image analysis and machine vision",
+      "createdAt": "2020-01-01T00:00:00Z",
+      "description": "Biomass Conversion and Biorefinery (Springer)",
       "url": "https://link.springer.com/article/10.1007/s13399-020-00904-w"
     }
   ]
