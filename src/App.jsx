@@ -1,6 +1,7 @@
 import Nav from "./components/Nav";
+import Hero from "./sections/Hero";
 import { useTheme } from "./hooks/useTheme";
-import { sections } from "./content";
+import { sections, profile, hero } from "./content";
 
 export default function App() {
   const { theme, toggle } = useTheme();
@@ -8,7 +9,7 @@ export default function App() {
     <>
       <Nav sections={sections} theme={theme} onToggleTheme={toggle} />
       <main className="container">
-        <h1>Chandrakanth Gudavalli</h1>
+        <Hero profile={profile} hero={hero} />
       </main>
     </>
   );
