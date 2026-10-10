@@ -77,7 +77,7 @@
 - [ ] **Step 1: Protect uncommitted user work**
 
 Run: `git status --short`
-If `src/shared/opensource/publications.json` is still listed as modified, STOP and ask the user whether to commit it first (it will be deleted with the old `src/`). Do not delete untracked root files (`*.jpeg`, `CLAUDE.md`, the Scholar HTML, the resume PDF).
+Expected: clean (existing work was snapshotted in commit `de8f5e07`). If anything is modified or untracked outside `assets/` and `.superpowers/`, STOP and ask the user before continuing.
 
 - [ ] **Step 2: Remove the old app**
 
@@ -306,7 +306,7 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
 
 **Interfaces:**
 - Produces (named exports of `src/content.js`):
-  - `profile: { name, tagline, bio, links: { resume, linkedin, scholar, email } }` — all strings
+  - `profile: { name, tagline, bio, links: { resume, linkedin, scholar, email }, highlight: { text, href, label } }` — all strings
   - `hero: { caption, subject, panes: [{ label, video: { webm, mp4 }, poster }] }` — exactly 2 panes; pane 0 is the primary (poses), pane 1 the dense model
   - `work: [{ title, impact, media?: { image, alt } | { video: { webm, mp4 }, poster, alt }, links: [{ label, href }] }]`
   - `experience: [{ org, role, location, start, end, bullets: string[], compact?: boolean }]`
@@ -338,6 +338,7 @@ test("profile has the agreed tagline and all links", () => {
   expect(profile.tagline).toBe("3D reconstruction · SfM · Gaussian Splatting · Diffusion Models");
   expect(profile.bio.length).toBeGreaterThan(40);
   for (const k of ["resume", "linkedin", "scholar", "email"]) expect(profile.links[k]).toBeTruthy();
+  expect(profile.highlight.text).toMatch(/^#1 · IARPA WRIVA Cross-View Geo-Localization Challenge 2026$/);
 });
 
 test("every link and media path is https, mailto or site-absolute", () => {
@@ -433,6 +434,11 @@ export const profile = {
     scholar: "https://scholar.google.com/citations?user=TyzK9okAAAAJ",
     email: "mailto:chandrakanthgudavalli@gmail.com",
   },
+  highlight: {
+    text: "#1 · IARPA WRIVA Cross-View Geo-Localization Challenge 2026",
+    label: "certificate",
+    href: "/media/wriva-cvgl-certificate.jpg",
+  },
 };
 
 export const hero = {
@@ -473,9 +479,12 @@ export const work = [
   {
     title: "Ground → satellite geolocalization via 3DGS",
     impact:
-      "Clusters of ground images rendered to a zenith view with Gaussian Splatting and Difix3D, then registered to WorldView-3 imagery. Sub-10 m camera RMSE.",
+      "Clusters of ground images rendered to a zenith view with Gaussian Splatting and Difix3D, then registered to WorldView-3 imagery. Sub-10 m camera RMSE; ranked #1 in the IARPA WRIVA Cross-View Geo-Localization Challenge 2026 (with Tajuddin Manhar Mohammed).",
     media: { image: "/media/geoloc.jpg", alt: "Ground images geo-located onto satellite imagery" },
-    links: [{ label: "CVPR 2026", href: "https://arxiv.org/abs/2602.14929" }],
+    links: [
+      { label: "CVPR 2026", href: "https://arxiv.org/abs/2602.14929" },
+      { label: "#1 certificate", href: "/media/wriva-cvgl-certificate.jpg" },
+    ],
   },
   {
     title: "MetaReg: fast incremental registration",
@@ -501,7 +510,7 @@ export const experience = [
     end: "Present",
     bullets: [
       "Productionized a cloud-native SfM pipeline for IARPA WRIVA fusing GPS, OpenStreetMap and satellite priors — #1 on the program leaderboard.",
-      "Built ground-to-satellite geolocalization with Gaussian Splatting and Difix3D, reaching sub-10 m camera RMSE (CVPR 2026).",
+      "Built ground-to-satellite geolocalization with Gaussian Splatting and Difix3D: sub-10 m camera RMSE (CVPR 2026), #1 in the IARPA WRIVA CVGL Challenge 2026.",
       "Benchmarked feed-forward pose models (VGGT, Pi3) against COLMAP and GLOMAP; recovered reliable poses from as few as 2–5 images.",
     ],
   },
@@ -1121,6 +1130,8 @@ test("renders name, tagline, bio and links", () => {
   expect(li).toHaveAttribute("target", "_blank");
   expect(li).toHaveAttribute("rel", "noopener noreferrer");
   expect(screen.getByRole("link", { name: "email" })).not.toHaveAttribute("target");
+  expect(screen.getByText(profile.highlight.text)).toBeInTheDocument();
+  expect(screen.getByRole("link", { name: "certificate" })).toHaveAttribute("href", profile.highlight.href);
 });
 
 test("renders two muted, looping videos with posters and both sources", () => {
@@ -1277,6 +1288,13 @@ export default function Hero({ profile, hero }) {
       <h1 className="hero-name">{profile.name}</h1>
       <p className="hero-tagline mono">{profile.tagline}</p>
       <p className="hero-bio">{profile.bio}</p>
+      <p className="hero-highlight mono">
+        <span aria-hidden="true">★ </span>
+        <span>{profile.highlight.text}</span>{" "}
+        <a href={profile.highlight.href} target="_blank" rel="noopener">
+          {profile.highlight.label}
+        </a>
+      </p>
       <LinkChips
         className="hero-links"
         links={[
@@ -1349,6 +1367,14 @@ Append to `src/styles.css`:
   color: var(--muted);
   margin: 16px 0 0;
   max-width: 600px;
+}
+.hero-highlight {
+  font-size: 12.5px;
+  color: var(--text);
+  margin: 14px 0 0;
+}
+.hero-highlight > span:first-child {
+  color: var(--accent);
 }
 .hero-links,
 .chips {
@@ -2000,8 +2026,8 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
 - Create: `scripts/encode-media.sh`, `src/media.test.js`, `public/media/*` (generated), `public/resume.pdf`, `public/og-image.jpg`
 
 **Interfaces:**
-- Consumes: every site-absolute path in `src/content.js` (Task 2); `assets/dense_reconstruction_of_whole_JHU_campus.webm`, `assets/mxreg_video (1).mp4`, `Resume__Chandrakanth_Gudavalli.pdf` (local, untracked).
-- Produces: files at exactly the paths content references: `/media/hero-{poses,dense}.{webm,mp4,jpg}`, `/media/metareg.{webm,mp4,jpg}`, `/media/wriva.jpg`, `/media/campus.jpg`, `/media/geoloc.jpg`, `/resume.pdf`; plus `/og-image.jpg`.
+- Consumes: every site-absolute path in `src/content.js` (Task 2); `assets/dense_reconstruction_of_whole_JHU_campus.webm`, `assets/mxreg_video (1).mp4`, `assets/1790977736926.jpeg` (certificate), `Resume__Chandrakanth_Gudavalli.pdf` (local, untracked).
+- Produces: files at exactly the paths content references: `/media/hero-{poses,dense}.{webm,mp4,jpg}`, `/media/metareg.{webm,mp4,jpg}`, `/media/wriva.jpg`, `/media/campus.jpg`, `/media/geoloc.jpg`, `/media/wriva-cvgl-certificate.jpg`, `/resume.pdf`; plus `/og-image.jpg`.
 
 - [ ] **Step 1: Write failing test `src/media.test.js`**
 
@@ -2085,6 +2111,9 @@ ffmpeg -v error -y -ss 38 -i "$JHU" -vf "crop=iw:ih/2:0:0,scale=800:-2" -frames:
 # Campus card still: YouTube thumbnail of the UCSB drone reconstruction.
 curl -fsSL "https://img.youtube.com/vi/2GJS7BRKg1s/maxresdefault.jpg" -o "$OUT/campus.jpg" ||
   curl -fsSL "https://img.youtube.com/vi/2GJS7BRKg1s/hqdefault.jpg" -o "$OUT/campus.jpg"
+
+# IARPA WRIVA CVGL 2026 #1 certificate (1200x900 JPEG, ~120 KB) — copied as-is.
+cp assets/1790977736926.jpeg "$OUT/wriva-cvgl-certificate.jpg"
 
 # Social preview (1200x630) from the dense model.
 ffmpeg -v error -y -ss "$HERO_START" -i "$JHU" \
@@ -2201,4 +2230,4 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
 
 - [ ] **Step 5: Hand off**
 
-Report test results, `dist` size, and the preview URL. Ask the user (a) for approval to run `npm run deploy`, and (b) whether to delete the untracked Scholar HTML dump and `1790977736926.jpeg`. Do not do either without a yes.
+Report test results, `dist` size, and the preview URL. Ask the user (a) for approval to run `npm run deploy`, and (b) whether to remove the now-unused Scholar HTML export and root resume copy from the repo. Do not do either without a yes.

@@ -107,6 +107,7 @@ Order: Nav → Hero → Work → Experience → Publications → Education → C
 - Name; mono tagline `3D reconstruction · SfM · Gaussian Splatting · Diffusion Models`.
 - Bio: "I build 3D reconstruction systems that hold up on messy, real-world imagery — from Structure-from-Motion and camera pose estimation to Gaussian Splatting, at campus and city scale."
 - Link row: `resume.pdf · linkedin · scholar · email`.
+- Highlight line (mono, accent star): `★ #1 · IARPA WRIVA Cross-View Geo-Localization Challenge 2026` with a `certificate` link to `/media/wriva-cvgl-certificate.jpg` (from `assets/1790977736926.jpeg`). The ground→satellite card and Mayachitra experience bullet also mention the win; the card credits co-winner Tajuddin Manhar Mohammed.
 - Pipeline pair: two `VideoPane`s side by side (stacked on < 640 px), each in a "viewer window" frame (dark title bar with mono caption, light video area because source videos have white backgrounds). Labels: `1 · recovered camera poses`, `2 · dense 3D model`. Caption below: `images → SfM cameras → dense reconstruction`.
 - Video behavior: `muted playsinline loop preload="metadata"`, poster shown immediately; autoplay starts only when in viewport. The two panes are kept in sync (secondary pane follows the primary's `currentTime` on loop/seek). With `prefers-reduced-motion: reduce`, videos do not autoplay — posters shown with a small play button.
 
