@@ -18,7 +18,7 @@ test("groupByYear sorts years descending regardless of input order", () => {
 
 test("experience lists every role with dates", () => {
   render(<Experience items={experience} />);
-  const section = screen.getByRole("region", { name: "// experience" });
+  const section = screen.getByRole("region", { name: "experience" });
   for (const e of experience) {
     expect(
       within(section).getByText(e.org, { exact: false }),

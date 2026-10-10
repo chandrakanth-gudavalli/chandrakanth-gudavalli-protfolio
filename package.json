@@ -11,8 +11,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "media": "bash scripts/encode-media.sh",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist -b master --repo git@github.com:chandrakanth-gudavalli/chandrakanth-gudavalli.github.io.git"
+    "predeploy": "npm test && npm run build",
+    "deploy": "gh-pages -d dist -b master --nojekyll --repo git@github.com:chandrakanth-gudavalli/chandrakanth-gudavalli.github.io.git"
   },
   "dependencies": {
     "@fontsource/inter": "^5.1.0",

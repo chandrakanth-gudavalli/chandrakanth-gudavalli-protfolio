@@ -6,7 +6,7 @@ export default function Nav({ sections, theme, onToggleTheme }) {
   return (
     <nav className="nav" aria-label="Sections">
       <div className="nav-inner">
-        <a className="nav-brand mono" href="#top">
+        <a className="nav-brand mono" href="#top" aria-label="Back to top">
           ~/cg
         </a>
         <div className="nav-links mono">

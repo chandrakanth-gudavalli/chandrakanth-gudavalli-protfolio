@@ -16,7 +16,7 @@ test("renders anchors for each section and the theme toggle", () => {
     "href",
     "#contact",
   );
-  expect(screen.getByRole("link", { name: "~/cg" })).toHaveAttribute(
+  expect(screen.getByRole("link", { name: "Back to top" })).toHaveAttribute(
     "href",
     "#top",
   );

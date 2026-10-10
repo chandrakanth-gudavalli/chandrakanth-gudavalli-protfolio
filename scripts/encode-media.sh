@@ -24,6 +24,8 @@ encode() {
   ffmpeg -v error -y -ss "$ss" -i "$in" -vf "$vf" -frames:v 1 -q:v 4 "$OUT/$name.jpg"
 }
 
+# Note: public/media/geoloc.jpg is a hand-cropped Figure 1 from arXiv 2602.14929; this script does not regenerate it.
+
 # Hero: the JHU video stacks the dense model (top half) over the camera poses (bottom half).
 encode "$JHU" "$HERO_START" "$HERO_DUR" "crop=iw:ih/2:0:0,scale=960:-2" hero-dense
 encode "$JHU" "$HERO_START" "$HERO_DUR" "crop=iw:ih/2:0:ih/2,scale=960:-2" hero-poses

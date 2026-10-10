@@ -6,7 +6,7 @@ test("renders a labelled section with one card per item", async () => {
   render(<Work items={work} />);
   await screen.findByRole("button", { name: "pause video" });
   const section = screen.getByRole("region", {
-    name: "// selected reconstructions",
+    name: "selected reconstructions",
   });
   expect(section).toHaveAttribute("id", "work");
   expect(within(section).getAllByRole("article")).toHaveLength(work.length);

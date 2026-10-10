@@ -87,7 +87,9 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 10;
+  background: var(--bg);
   background: color-mix(in srgb, var(--bg) 85%, transparent);
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);
 }
