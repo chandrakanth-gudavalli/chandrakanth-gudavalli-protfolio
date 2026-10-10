@@ -36,9 +36,9 @@ encode "$MX" 0 8 "scale=720:-2" metareg
 # WRIVA card still: aerial view from the dense half.
 ffmpeg -v error -y -ss 38 -i "$JHU" -vf "crop=iw:ih/2:0:0,scale=800:-2" -frames:v 1 -q:v 4 "$OUT/wriva.jpg"
 
-# Campus card still: YouTube thumbnail of the UCSB drone reconstruction.
-curl -fsSL "https://img.youtube.com/vi/2GJS7BRKg1s/maxresdefault.jpg" -o "$OUT/campus.jpg" ||
-  curl -fsSL "https://img.youtube.com/vi/2GJS7BRKg1s/hqdefault.jpg" -o "$OUT/campus.jpg"
+# Campus card still: dense reconstruction of the UCSB campus (screenshot, 1507x1182),
+# cropped to 16:10 below the black background in the top-left corner.
+ffmpeg -v error -y -i "$SRC/ucsb_campus_reconstruction.png" -vf "crop=1264:790:243:30,scale=1200:-2" -q:v 3 "$OUT/campus.jpg"
 
 # IARPA WRIVA CVGL 2026 #1 certificate (1200x900 JPEG, ~120 KB) — copied as-is.
 cp assets/1790977736926.jpeg "$OUT/wriva-cvgl-certificate.jpg"
