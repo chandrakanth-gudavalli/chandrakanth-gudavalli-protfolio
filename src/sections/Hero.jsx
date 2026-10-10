@@ -57,7 +57,11 @@ export default function Hero({ profile, hero }) {
       <p className="hero-highlight mono">
         <span aria-hidden="true">★ </span>
         <span>{profile.highlight.text}</span>{" "}
-        <a href={profile.highlight.href} target="_blank" rel="noopener">
+        <a
+          href={profile.highlight.href}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {profile.highlight.label}
         </a>
       </p>

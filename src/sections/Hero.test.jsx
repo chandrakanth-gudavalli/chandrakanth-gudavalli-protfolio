@@ -1,4 +1,10 @@
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import {
+  render,
+  screen,
+  fireEvent,
+  waitFor,
+  act,
+} from "@testing-library/react";
 import { vi } from "vitest";
 import Hero from "./Hero";
 import { profile, hero } from "../content";
@@ -84,4 +90,40 @@ test("shows play button when autoplay is blocked", async () => {
   expect(
     await screen.findByRole("button", { name: /play reconstruction/i }),
   ).toBeInTheDocument();
+});
+
+test("gates playback on viewport visibility via IntersectionObserver", async () => {
+  const pause = window.HTMLMediaElement.prototype.pause;
+  pause.mockClear();
+  let callback;
+  window.IntersectionObserver = class {
+    constructor(cb) {
+      callback = cb;
+    }
+    observe() {}
+    disconnect() {}
+  };
+  render(<Hero profile={profile} hero={hero} />);
+  expect(play).not.toHaveBeenCalled();
+  await act(async () => {
+    callback([{ isIntersecting: true }]);
+  });
+  expect(play).toHaveBeenCalledTimes(2);
+  await act(async () => {
+    callback([{ isIntersecting: false }]);
+  });
+  expect(pause).toHaveBeenCalledTimes(2);
+});
+
+test("keeps the second video in sync with the first", async () => {
+  const { container } = render(<Hero profile={profile} hero={hero} />);
+  await waitFor(() => expect(play).toHaveBeenCalledTimes(2));
+  const [a, b] = container.querySelectorAll("video");
+  a.currentTime = 5;
+  b.currentTime = 0;
+  fireEvent(a, new Event("timeupdate"));
+  expect(b.currentTime).toBe(5);
+  a.currentTime = 5.1;
+  fireEvent(a, new Event("timeupdate"));
+  expect(b.currentTime).toBe(5);
 });
