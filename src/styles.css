@@ -265,3 +265,104 @@ a:hover {
     grid-template-columns: 1fr;
   }
 }
+
+.exp-list,
+.exp-bullets,
+.pub-list,
+.edu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.exp + .exp {
+  margin-top: 28px;
+}
+.exp-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.exp-org {
+  font-weight: 500;
+}
+.exp-dates,
+.exp-loc {
+  font-size: 12.5px;
+  color: var(--muted);
+}
+.exp-bullets li {
+  font-size: 14.5px;
+  color: var(--muted);
+  margin-top: 6px;
+  padding-left: 14px;
+  position: relative;
+}
+.exp-bullets li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+}
+.exp.compact + .exp.compact {
+  margin-top: 16px;
+}
+.pub-year + .pub-year {
+  margin-top: 22px;
+}
+.pub-year-label {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--muted);
+  margin: 0 0 8px;
+}
+.pub + .pub {
+  margin-top: 14px;
+}
+.pub-title {
+  font-size: 15px;
+}
+.pub-title a {
+  color: var(--text);
+}
+.pub-title a:hover {
+  color: var(--accent);
+}
+.pub-authors {
+  font-size: 13.5px;
+  color: var(--muted);
+}
+.pub-authors strong {
+  color: var(--text);
+  font-weight: 500;
+}
+.pub-venue {
+  font-size: 12px;
+  color: var(--muted);
+}
+.tag {
+  font-size: 10.5px;
+  color: var(--accent);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1px 6px;
+  margin-left: 8px;
+  vertical-align: 2px;
+}
+.edu-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 15px;
+}
+.edu-list li + li {
+  margin-top: 8px;
+}
+.contact-blurb {
+  margin: 0;
+}
+.footer {
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+  padding: 32px 20px 48px;
+}
