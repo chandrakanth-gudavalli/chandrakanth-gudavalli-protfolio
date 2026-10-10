@@ -32,3 +32,5 @@ src/assests/images/faces.gif
 git_data_fetcher.mjs
 build_old/*
 build_*/*
+.superpowers/
+assets/
