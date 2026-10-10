@@ -18,8 +18,9 @@ afterEach(() => {
   delete window.IntersectionObserver;
 });
 
-test("renders name, tagline, bio and links", () => {
+test("renders name, tagline, bio and links", async () => {
   render(<Hero profile={profile} hero={hero} />);
+  await screen.findByRole("button", { name: "pause reconstruction" });
   expect(
     screen.getByRole("heading", { level: 1, name: profile.name }),
   ).toBeInTheDocument();
@@ -41,12 +42,12 @@ test("renders name, tagline, bio and links", () => {
   expect(screen.getByText(profile.highlight.text)).toBeInTheDocument();
   const cert = screen.getByRole("link", { name: "certificate" });
   expect(cert).toHaveAttribute("href", profile.highlight.href);
-  expect(cert).toHaveAttribute("target", "_blank");
-  expect(cert).toHaveAttribute("rel", "noopener noreferrer");
+  expect(cert).not.toHaveAttribute("target");
 });
 
-test("renders two muted, looping videos with posters and both sources", () => {
+test("renders two muted, looping videos with posters and both sources", async () => {
   const { container } = render(<Hero profile={profile} hero={hero} />);
+  await screen.findByRole("button", { name: "pause reconstruction" });
   const videos = container.querySelectorAll("video");
   expect(videos).toHaveLength(2);
   videos.forEach((v, i) => {
@@ -78,8 +79,11 @@ test("does not autoplay under reduced motion, plays on button click", async () =
   }));
   render(<Hero profile={profile} hero={hero} />);
   expect(play).not.toHaveBeenCalled();
-  fireEvent.click(screen.getByRole("button", { name: /play reconstruction/i }));
+  fireEvent.click(screen.getByRole("button", { name: "play reconstruction" }));
   await waitFor(() => expect(play).toHaveBeenCalledTimes(2));
+  expect(
+    await screen.findByRole("button", { name: "pause reconstruction" }),
+  ).toBeInTheDocument();
 });
 
 test("shows play button when autoplay is blocked", async () => {
@@ -88,7 +92,46 @@ test("shows play button when autoplay is blocked", async () => {
   );
   render(<Hero profile={profile} hero={hero} />);
   expect(
-    await screen.findByRole("button", { name: /play reconstruction/i }),
+    await screen.findByRole("button", { name: "play reconstruction" }),
+  ).toBeInTheDocument();
+});
+
+test("autoplay success shows a pause button; clicking it pauses both videos", async () => {
+  const pause = window.HTMLMediaElement.prototype.pause;
+  pause.mockClear();
+  render(<Hero profile={profile} hero={hero} />);
+  fireEvent.click(
+    await screen.findByRole("button", { name: "pause reconstruction" }),
+  );
+  expect(pause).toHaveBeenCalledTimes(2);
+  expect(
+    screen.getByRole("button", { name: "play reconstruction" }),
+  ).toBeInTheDocument();
+});
+
+test("a user pause is not undone when the hero re-enters the viewport", async () => {
+  let callback;
+  window.IntersectionObserver = class {
+    constructor(cb) {
+      callback = cb;
+    }
+    observe() {}
+    disconnect() {}
+  };
+  render(<Hero profile={profile} hero={hero} />);
+  await act(async () => {
+    callback([{ isIntersecting: true }]);
+  });
+  fireEvent.click(
+    await screen.findByRole("button", { name: "pause reconstruction" }),
+  );
+  play.mockClear();
+  await act(async () => {
+    callback([{ isIntersecting: true }]);
+  });
+  expect(play).not.toHaveBeenCalled();
+  expect(
+    screen.getByRole("button", { name: "play reconstruction" }),
   ).toBeInTheDocument();
 });
 

@@ -11,7 +11,8 @@ export function safePlay(video) {
     return p && typeof p.then === "function"
       ? p.then(
           () => true,
-          () => false,
+          // AbortError = our own pause() interrupted play(); that is not autoplay being blocked.
+          (err) => err?.name === "AbortError",
         )
       : Promise.resolve(true);
   } catch {
