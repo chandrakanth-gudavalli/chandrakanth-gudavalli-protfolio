@@ -21,7 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-package-lock.json
 
 src/assests/images/top_image.jpg
 src/assests/images/fake_media_objects_removed.png
@@ -31,3 +30,8 @@ src/assests/images/faces.gif
 .all-contributorsrc
 git_data_fetcher.mjs
 build_old/*
+build_*/*
+.superpowers/
+assets/
+node_modules/
+dist/

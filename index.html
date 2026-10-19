@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      try {
+        var t = localStorage.getItem("theme");
+        if (t !== "light" && t !== "dark")
+          t = window.matchMedia && matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+        document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    </script>
+    <title>Chandrakanth Gudavalli — 3D Reconstruction Engineer</title>
+    <meta
+      name="description"
+      content="3D reconstruction engineer building Structure-from-Motion, camera pose and Gaussian Splatting systems that hold up on real-world imagery."
+    />
+    <link rel="canonical" href="https://www.chandrakanthgudavalli.com/" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#16181c" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f5" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.chandrakanthgudavalli.com/" />
+    <meta property="og:title" content="Chandrakanth Gudavalli — 3D Reconstruction Engineer" />
+    <meta
+      property="og:description"
+      content="3D reconstruction · SfM · Gaussian Splatting · Diffusion Models"
+    />
+    <meta property="og:image" content="https://www.chandrakanthgudavalli.com/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Dense 3D reconstruction of a university campus" />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body>
+    <noscript>This site needs JavaScript. Reach me at chandrakanthgudavalli@gmail.com.</noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
