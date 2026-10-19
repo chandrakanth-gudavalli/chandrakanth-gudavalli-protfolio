@@ -35,7 +35,7 @@ test("publications bold the owner's name and tag patents", () => {
   expect(screen.getAllByText("patent")).toHaveLength(
     publications.filter((p) => p.type === "patent").length,
   );
-  expect(screen.getByRole("heading", { name: "2026" })).toBeInTheDocument();
+  expect(screen.getByRole("heading", { name: "2025" })).toBeInTheDocument();
 });
 
 test("renders unlinked title when href missing", () => {

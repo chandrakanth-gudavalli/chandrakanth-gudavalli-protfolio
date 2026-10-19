@@ -72,7 +72,6 @@ export const work = [
       alt: "Ground images geo-located onto satellite imagery",
     },
     links: [
-      { label: "CVPR 2026", href: "https://arxiv.org/abs/2602.14929" },
       { label: "#1 certificate", href: "/media/wriva-cvgl-certificate.jpg" },
     ],
   },
@@ -103,7 +102,7 @@ export const experience = [
     end: "Present",
     bullets: [
       "Productionized a cloud-native SfM pipeline for IARPA WRIVA fusing GPS, OpenStreetMap and satellite priors — #1 on the program leaderboard.",
-      "Built ground-to-satellite geolocalization with Gaussian Splatting and Difix3D: sub-10 m camera RMSE (CVPR 2026), #1 in the IARPA WRIVA CVGL Challenge 2026.",
+      "Built ground-to-satellite geolocalization with Gaussian Splatting and Difix3D: sub-10 m camera RMSE, #1 in the IARPA WRIVA CVGL Challenge 2026.",
       "Benchmarked feed-forward pose models (VGGT, Pi3) against COLMAP and GLOMAP; recovered reliable poses from as few as 2–5 images.",
     ],
   },
@@ -144,15 +143,6 @@ export const experience = [
 ];
 
 export const publications = [
-  {
-    year: 2026,
-    type: "paper",
-    title:
-      "Wrivinder: Towards Spatial Intelligence for Geo-locating Ground Images onto Satellite Imagery",
-    authors: "C. Gudavalli et al.",
-    venue: "CVPR 2026",
-    href: "https://arxiv.org/abs/2602.14929",
-  },
   {
     year: 2025,
     type: "paper",
