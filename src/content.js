@@ -13,7 +13,7 @@ export const profile = {
     resume: "/resume.pdf",
     linkedin: "https://www.linkedin.com/in/gudavallic",
     scholar: "https://scholar.google.com/citations?user=TyzK9okAAAAJ",
-    email: "mailto:chandrakanthgudavalli@gmail.com",
+    email: "chandrakanthgudavalli@gmail.com",
   },
   highlight: {
     text: "#1 · IARPA WRIVA Cross-View Geo-Localization Challenge 2026",
@@ -257,6 +257,6 @@ export const education = [
 export const contact = {
   blurb:
     "Open to 3D vision and spatial-AI roles. The fastest way to reach me is email.",
-  email: "mailto:chandrakanthgudavalli@gmail.com",
+  email: "chandrakanthgudavalli@gmail.com",
   linkedin: "https://www.linkedin.com/in/gudavallic",
 };

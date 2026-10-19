@@ -1,4 +1,4 @@
-export default function LinkChips({ links, className = "chips" }) {
+export default function LinkChips({ links, className = "chips", children }) {
   return (
     <div className={`${className} mono`}>
       {links.map(({ label, href }) => {
@@ -15,6 +15,7 @@ export default function LinkChips({ links, className = "chips" }) {
           </a>
         );
       })}
+      {children}
     </div>
   );
 }

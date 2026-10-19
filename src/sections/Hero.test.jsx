@@ -29,16 +29,14 @@ test("renders name, tagline, bio and links", async () => {
     "href",
     "/resume.pdf",
   );
-  expect(screen.getByRole("link", { name: "email" })).toHaveAttribute(
-    "href",
-    profile.links.email,
+  expect(screen.queryByRole("link", { name: "email" })).toBeNull();
+  expect(screen.getByRole("button", { name: "email" })).toHaveAttribute(
+    "title",
+    `copy ${profile.links.email}`,
   );
   const li = screen.getByRole("link", { name: "linkedin" });
   expect(li).toHaveAttribute("target", "_blank");
   expect(li).toHaveAttribute("rel", "noopener noreferrer");
-  expect(screen.getByRole("link", { name: "email" })).not.toHaveAttribute(
-    "target",
-  );
   expect(screen.getByText(profile.highlight.text)).toBeInTheDocument();
   const cert = screen.getByRole("link", { name: "certificate" });
   expect(cert).toHaveAttribute("href", profile.highlight.href);

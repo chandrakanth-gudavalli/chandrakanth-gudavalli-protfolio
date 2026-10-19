@@ -19,7 +19,6 @@ const URL_KEYS = new Set([
   "resume",
   "linkedin",
   "scholar",
-  "email",
 ]);
 
 function collectUrls(node, out = []) {
@@ -45,10 +44,10 @@ test("profile has the agreed tagline and all links", () => {
   );
 });
 
-test("every link and media path is https, mailto or site-absolute", () => {
+test("every link and media path is https or site-absolute", () => {
   const urls = collectUrls(content);
   expect(urls.length).toBeGreaterThan(20);
-  for (const u of urls) expect(u).toMatch(/^(https:\/\/|mailto:|\/[^/])/);
+  for (const u of urls) expect(u).toMatch(/^(https:\/\/|\/[^/])/);
 });
 
 test("no phone number appears anywhere in content", () => {
@@ -98,7 +97,8 @@ test("publications are typed, dated and include the author", () => {
 
 test("education, contact and nav sections are present", () => {
   expect(education).toHaveLength(2);
-  expect(contact.email).toMatch(/^mailto:/);
+  expect(contact.email).toMatch(/^[^\s@:]+@[^\s@]+\.[a-z]+$/);
+  expect(profile.links.email).toBe(contact.email);
   expect(sections.map((s) => s.id)).toEqual([
     "work",
     "experience",

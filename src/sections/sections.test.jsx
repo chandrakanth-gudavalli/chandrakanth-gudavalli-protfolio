@@ -62,7 +62,8 @@ test("education and contact render; contact has no phone", () => {
   ).toBeInTheDocument();
   const { container } = render(<Contact contact={contact} />);
   expect(
-    screen.getByRole("link", { name: /chandrakanthgudavalli@gmail\.com/ }),
-  ).toHaveAttribute("href", contact.email);
+    screen.getByRole("button", { name: /chandrakanthgudavalli@gmail\.com/ }),
+  ).toHaveAttribute("title", `copy ${contact.email}`);
+  expect(container.querySelector('a[href^="mailto:"]')).toBeNull();
   expect(container.textContent).not.toMatch(/\d{3}[-.\s]\d{3}[-.\s]\d{4}/);
 });

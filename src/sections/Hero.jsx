@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import CopyEmail from "../components/CopyEmail";
 import LinkChips from "../components/LinkChips";
 import VideoPane from "../components/VideoPane";
 import { useViewportPlayback } from "../hooks/useViewportPlayback";
@@ -38,9 +39,10 @@ export default function Hero({ profile, hero }) {
           { label: "resume.pdf", href: links.resume },
           { label: "linkedin", href: links.linkedin },
           { label: "scholar", href: links.scholar },
-          { label: "email", href: links.email },
         ]}
-      />
+      >
+        <CopyEmail email={links.email} label="email" />
+      </LinkChips>
       <div className="pipeline" ref={box}>
         <VideoPane ref={primary} {...hero.panes[0]} />
         <VideoPane ref={secondary} {...hero.panes[1]} />
