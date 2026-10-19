@@ -24,7 +24,7 @@ Single-page Vite + React 18 site served at https://www.chandrakanthgudavalli.com
 - `src/content.js` — ALL site copy, links and media paths. Edit this to update the site.
 - `src/App.jsx` — composes Nav + sections in order.
 - `src/sections/` — Hero, Work, Experience, Publications, Education, Contact, Footer (presentational; content via props).
-- `src/components/` — Nav, ThemeToggle, VideoPane, WorkCard, PubItem, LinkChips, Section.
+- `src/components/` — Nav, ThemeToggle, VideoPane, WorkCard, PubItem, LinkChips, Section, CopyEmail.
 - `src/hooks/` — useTheme (OS default, persisted on toggle), useActiveSection (nav highlight), useViewportPlayback (play videos only while visible, with pause toggle).
 - `src/lib/` — media helpers (reduced-motion check, safe play) and groupByYear for publications.
 - `src/styles.css` — design tokens (Night default, `[data-theme="light"]`) and all styles.
@@ -33,5 +33,6 @@ Single-page Vite + React 18 site served at https://www.chandrakanthgudavalli.com
 ## Rules
 
 - No phone number in site content (enforced by `src/content.test.js`).
+- No `mailto:` links — the owner hates them opening a mail app. Email is a plain address in content, rendered with `CopyEmail` (click to copy); in the GitHub profile README it's inline code so GitHub doesn't auto-link it.
 - Every media path in content must exist in `public/` and media files must be ≤ 2.5 MB (`src/media.test.js`).
 - Keep runtime deps to react, react-dom and the two @fontsource packages.
