@@ -88,7 +88,7 @@ test("experience entries have 1–3 short bullets", () => {
 });
 
 test("publications are typed, dated and include the author", () => {
-  expect(publications).toHaveLength(9);
+  expect(publications).toHaveLength(10);
   for (const p of publications) {
     expect(["paper", "patent"]).toContain(p.type);
     expect(Number.isInteger(p.year)).toBe(true);
