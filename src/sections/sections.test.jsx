@@ -3,8 +3,9 @@ import Experience from "./Experience";
 import Publications from "./Publications";
 import Education from "./Education";
 import Contact from "./Contact";
+import Fun from "./Fun";
 import { groupByYear } from "../lib/groupByYear";
-import { experience, publications, education, contact } from "../content";
+import { experience, publications, education, contact, fun } from "../content";
 
 test("groupByYear sorts years descending regardless of input order", () => {
   const out = groupByYear([
@@ -66,4 +67,17 @@ test("education and contact render; contact has no phone", () => {
   ).toHaveAttribute("title", `copy ${contact.email}`);
   expect(container.querySelector('a[href^="mailto:"]')).toBeNull();
   expect(container.textContent).not.toMatch(/\d{3}[-.\s]\d{3}[-.\s]\d{4}/);
+});
+
+test("fun projects link to their pages in the same tab", () => {
+  render(<Fun items={fun} />);
+  const section = screen.getByRole("region", { name: /fun/ });
+  for (const f of fun) {
+    expect(within(section).getByText(f.title)).toBeInTheDocument();
+    const link = within(section).getByRole("link", {
+      name: new RegExp(`open ${f.title}`),
+    });
+    expect(link).toHaveAttribute("href", f.href);
+    expect(link).not.toHaveAttribute("target");
+  }
 });

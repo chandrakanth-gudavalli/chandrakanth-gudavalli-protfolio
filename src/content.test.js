@@ -7,6 +7,7 @@ const {
   publications,
   education,
   contact,
+  fun,
   sections,
 } = content;
 
@@ -102,7 +103,17 @@ test("education, contact and nav sections are present", () => {
   expect(sections.map((s) => s.id)).toEqual([
     "work",
     "experience",
+    "fun",
     "publications",
     "contact",
   ]);
+});
+
+test("fun projects are titled, described and hosted under the site", () => {
+  expect(fun).toHaveLength(2);
+  for (const f of fun) {
+    expect(f.title).toBeTruthy();
+    expect(f.blurb.length).toBeGreaterThan(20);
+    expect(f.href).toMatch(/^\/[a-z0-9_-]+\/$/);
+  }
 });

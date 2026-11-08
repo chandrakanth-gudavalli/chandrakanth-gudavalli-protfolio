@@ -9,17 +9,17 @@ All copy, links and media paths live in `src/content.js`. Sections and component
 3. `npm run dev` to eyeball it if layout could be affected.
 4. Commit (Prettier runs via the husky pre-commit hook).
 5. Deploy only with the owner's OK — see [repos-and-deploy.md](repos-and-deploy.md).
-6. If the change touches the tagline, bio, selected work or recent publications, update the GitHub profile README to match.
+6. If the change touches the tagline, bio, selected work, fun projects or recent publications, update the GitHub profile README to match.
 
 ## Tests that pin content
 
 Adding or removing entries breaks these on purpose; update the number in the same commit:
 
-| Test                             | Pins                                                                                                        |
-| -------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| `src/content.test.js`            | `work` has 4 items, `publications` has 10, `education` has 2, `hero.panes` has 2, nav section ids and order |
-| `src/sections/sections.test.jsx` | a `"2026"` heading exists in Publications (the newest year in `publications`)                               |
-| `src/sections/Hero.test.jsx`     | the hero renders 2 videos                                                                                   |
+| Test                             | Pins                                                                                                                     |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| `src/content.test.js`            | `work` has 4 items, `fun` has 2, `publications` has 10, `education` has 2, `hero.panes` has 2, nav section ids and order |
+| `src/sections/sections.test.jsx` | a `"2026"` heading exists in Publications (the newest year in `publications`)                                            |
+| `src/sections/Hero.test.jsx`     | the hero renders 2 videos                                                                                                |
 
 Rules enforced by tests (see `CLAUDE.md`): no phone number anywhere in content; every media path must exist under `public/`; each media file ≤ 2.5 MB.
 
@@ -27,6 +27,7 @@ Rules enforced by tests (see `CLAUDE.md`): no phone number anywhere in content; 
 
 - **Publication:** `{ year, type: "paper" | "patent", title, authors, venue, href? }`. Papers must include `C. Gudavalli` in `authors` (it's bolded on render). Grouped and sorted by year automatically (`src/lib/groupByYear.js`). `venue` is free text — it's where status like "arXiv preprint" goes.
 - **Work card:** `{ title, impact, media: { image | video: { webm, mp4 }, poster?, alt }, links: [{ label, href }] }`.
+- **Fun project:** `{ title, blurb, href }` — `href` is the project's path on this domain, e.g. `/matcher-rotation/`. Opens in the same tab.
 - **Experience:** `{ org, role, location, start, end, bullets, compact? }` — keep 1–3 short bullets.
 
 ## Media

@@ -1,6 +1,7 @@
 export const sections = [
   { id: "work", label: "work" },
   { id: "experience", label: "experience" },
+  { id: "fun", label: "fun" },
   { id: "publications", label: "publications" },
   { id: "contact", label: "contact" },
 ];
@@ -140,6 +141,22 @@ export const experience = [
     bullets: [
       "C++ and Python developer on telecom billing systems and PCI-compliant payment APIs.",
     ],
+  },
+];
+
+// Side projects hosted as their own GitHub Pages repos under this domain.
+export const fun = [
+  {
+    title: "UCSB in 3D",
+    blurb:
+      "Explore the UC Santa Barbara campus as 3D Gaussian Splatting models, from the air and from the ground.",
+    href: "/uc_santa_barbara_3d/",
+  },
+  {
+    title: "Matchers Under Rotation",
+    blurb:
+      "How ten image point matchers (LoMa, LoFTR, RoMa, LightGlue, SIFT, MASt3R) cope as one drone image is rotated through 360°.",
+    href: "/matcher-rotation/",
   },
 ];
 

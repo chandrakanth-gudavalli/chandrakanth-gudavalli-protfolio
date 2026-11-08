@@ -12,11 +12,19 @@ function localPaths(node, out = []) {
   return out;
 }
 
+// Fun projects are served by their own GitHub Pages repos, not from public/.
+const { fun, ...siteContent } = content;
+
 test("every site-absolute path in content exists in public/", () => {
-  const missing = localPaths(content).filter(
+  const missing = localPaths(siteContent).filter(
     (p) => !existsSync(join(PUBLIC, p)),
   );
   expect(missing).toEqual([]);
+});
+
+test("public/ never shadows a fun project's path", () => {
+  const clashes = fun.filter((f) => existsSync(join(PUBLIC, f.href)));
+  expect(clashes).toEqual([]);
 });
 
 test("each media file is at most 2.5 MB", () => {

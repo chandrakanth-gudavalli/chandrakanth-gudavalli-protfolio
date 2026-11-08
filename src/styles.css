@@ -391,6 +391,34 @@ a:hover {
 .edu-list li + li {
   margin-top: 8px;
 }
+.fun-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.fun-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+}
+.fun-list li + li {
+  margin-top: 18px;
+}
+.fun-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+.fun-blurb {
+  margin: 2px 0 0;
+  font-size: 15px;
+  color: var(--muted);
+}
+.fun-open {
+  font-size: 13px;
+  white-space: nowrap;
+}
 .contact-blurb {
   margin: 0;
 }

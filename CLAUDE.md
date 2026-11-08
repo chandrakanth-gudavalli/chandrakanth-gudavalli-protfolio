@@ -23,7 +23,7 @@ Single-page Vite + React 18 site served at https://www.chandrakanthgudavalli.com
 
 - `src/content.js` — ALL site copy, links and media paths. Edit this to update the site.
 - `src/App.jsx` — composes Nav + sections in order.
-- `src/sections/` — Hero, Work, Experience, Publications, Education, Contact, Footer (presentational; content via props).
+- `src/sections/` — Hero, Work, Experience, Fun, Publications, Education, Contact, Footer (presentational; content via props).
 - `src/components/` — Nav, ThemeToggle, VideoPane, WorkCard, PubItem, LinkChips, Section, CopyEmail.
 - `src/hooks/` — useTheme (OS default, persisted on toggle), useActiveSection (nav highlight), useViewportPlayback (play videos only while visible, with pause toggle).
 - `src/lib/` — media helpers (reduced-motion check, safe play) and groupByYear for publications.
