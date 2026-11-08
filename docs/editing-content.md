@@ -27,7 +27,7 @@ Rules enforced by tests (see `CLAUDE.md`): no phone number anywhere in content; 
 
 - **Publication:** `{ year, type: "paper" | "patent", title, authors, venue, href? }`. Papers must include `C. Gudavalli` in `authors` (it's bolded on render). Grouped and sorted by year automatically (`src/lib/groupByYear.js`). `venue` is free text — it's where status like "arXiv preprint" goes.
 - **Work card:** `{ title, impact, media: { image | video: { webm, mp4 }, poster?, alt }, links: [{ label, href }] }`.
-- **Fun project:** `{ title, blurb, href }` — `href` is the project's path on this domain, e.g. `/matcher-rotation/`. Opens in the same tab.
+- **Fun project:** `{ title, blurb, href }` — `href` is the project's path on this domain, e.g. `/matcher-rotation/`. Opens in a new tab.
 - **Experience:** `{ org, role, location, start, end, bullets, compact? }` — keep 1–3 short bullets.
 
 ## Media

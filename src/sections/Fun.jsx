@@ -13,6 +13,8 @@ export default function Fun({ items }) {
             <a
               className="fun-open mono"
               href={f.href}
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label={`open ${f.title}`}
             >
               open <span aria-hidden="true">↗</span>

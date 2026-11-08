@@ -69,7 +69,7 @@ test("education and contact render; contact has no phone", () => {
   expect(container.textContent).not.toMatch(/\d{3}[-.\s]\d{3}[-.\s]\d{4}/);
 });
 
-test("fun projects link to their pages in the same tab", () => {
+test("fun projects open their pages in a new tab", () => {
   render(<Fun items={fun} />);
   const section = screen.getByRole("region", { name: /fun/ });
   for (const f of fun) {
@@ -78,6 +78,7 @@ test("fun projects link to their pages in the same tab", () => {
       name: new RegExp(`open ${f.title}`),
     });
     expect(link).toHaveAttribute("href", f.href);
-    expect(link).not.toHaveAttribute("target");
+    expect(link).toHaveAttribute("target", "_blank");
+    expect(link).toHaveAttribute("rel", "noopener noreferrer");
   }
 });
